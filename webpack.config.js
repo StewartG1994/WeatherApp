@@ -16,7 +16,9 @@ module.exports = {   mode: 'development',
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'Weather Mate',
+      template: 'src/index.html'
+
     }),
   ],
 
