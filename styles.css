@@ -1,0 +1,133 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: 'Roboto', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #242333;
+}
+
+.searchContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 40px 0px 40px 0px;
+
+}
+
+#searchinput{
+    width: 50%;
+    padding: 20px;
+    border: none;
+    border-bottom: 2px solid #242333;
+    font-size: 1.5rem;
+
+}
+
+#searchinput:focus{
+    outline: none;
+}
+
+h1{
+    color: #242333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.search{
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weatherDiv{
+    background-color: #01B0D3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size:1.5rem;
+    padding: 10px 0px 10px 0px;
+}
+
+.titleDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.humidity, .pressure {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.returnDiv{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #01B0D3;
+    gap: 10px;
+}
+
+.displayError{
+    padding: 10px 0px 10px 0px;
+    font-size: 1.5rem;
+}
