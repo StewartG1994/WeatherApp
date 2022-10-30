@@ -1,32 +1,46 @@
 import { getData } from './data'
 import back from './assets/back.png'
-const backButton = document.createElement('img')
+import css from './styles.css'
+
+function kelvinCovert (kelvin) {
+  const celsius = Math.round(kelvin - 273.15)
+  return celsius
+}
+
+function returnBack () {
+  location.reload()
+}
 
 function displayNodes (titleInfo, dayInfo, currentWeatherInfo, tempInfo, humidityInfo, pressureInfo) {
   const container = document.querySelector('.searchContainer')
   container.textContent = ''
+  const titleDiv = document.createElement('div')
+  titleDiv.className = 'titleDiv'
   const title = document.createElement('h1')
-  const day = document.createElement('p')
-  const currentWeather = document.createElement('p')
-  const temp = document.createElement('h1')
+  const weatherDiv = document.createElement('div')
+  weatherDiv.className = 'weatherDiv'
+  const temp = document.createElement('p')
   const humidity = document.createElement('p')
+  humidity.className = 'humidity'
   const pressure = document.createElement('p')
+  pressure.className = 'pressure'
+  const returnDiv = document.createElement('div')
+  returnDiv.className = 'returnDiv'
   const backButton = document.createElement('img')
+  const returnP = document.createElement('p')
+  returnP.textContent = 'Return'
   backButton.className = 'backButton'
   backButton.src = back
-  title.textContent = titleInfo
-  day.textContent = dayInfo
-  temp.textContent = tempInfo
-  currentWeather.textContent = currentWeatherInfo
-  humidity.textContent = humidityInfo
-  pressure.textContent = pressureInfo
-  container.append(title, day, currentWeather, temp, humidity, pressure, backButton)
-}
-
-function returnBack () {
-  backButton.addEventListener('click', () => {
-    console.log(backButton)
-  })
+  title.textContent = titleInfo + ' ' + dayInfo
+  temp.textContent = 'Its currently ' + kelvinCovert(tempInfo) + 'C' + ' with ' + currentWeatherInfo
+  humidity.textContent = 'Humidity ' + humidityInfo + '%'
+  pressure.textContent = 'Pressure ' + pressureInfo + ' millibars'
+  titleDiv.appendChild(title)
+  weatherDiv.append(temp)
+  returnDiv.append(returnP, backButton)
+  container.append(titleDiv, weatherDiv, humidity, pressure, returnDiv)
+  console.log(backButton)
+  backButton.addEventListener('click', returnBack)
 }
 
 function displayInfomation () {
@@ -36,11 +50,10 @@ function displayInfomation () {
     const info = getData(textBox.value)
     info.then(function (result) {
       const info = result
-      displayNodes(info.name, info.sys.country, info.weather[0].main, info.main.temp, info.main.humidity, info.main.pressure)
+      displayNodes(info.name, info.sys.country, info.weather[0].description, info.main.temp, info.main.humidity, info.main.pressure)
       console.log(info)
     }
     )
-    returnBack()
   })
 }
 
