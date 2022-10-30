@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    font-family: 'Roboto', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -59,7 +60,6 @@ table {
     flex-direction: column;
     width: 50vw;
     background-color: #FFFFFF;
-    padding: 50px;
     border-radius: 15px;
 }
 
@@ -90,3 +90,42 @@ h1{
     justify-content: center;
 }
 
+.weatherDiv{
+    background-color: #01B0D3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size:1.5rem;
+    padding: 10px 0px 10px 0px;
+}
+
+.titleDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.humidity, .pressure {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.returnDiv{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #01B0D3;
+    gap: 10px;
+}
+
+.displayError{
+    padding: 10px 0px 10px 0px;
+    font-size: 1.5rem;
+}
